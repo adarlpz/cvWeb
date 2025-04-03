@@ -1,3 +1,8 @@
+---
+import {ClientRouter} from 'astro:transitions';
+import "../styles/global.css"
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,30 +11,61 @@
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<title>webCV</title>
+		<title>cvWeb</title>
+		<ClientRouter/>
 	</head>
-
 	<body>
 		<header class="">
-			<p class="lato-bold">Inicio</p>
-			<p class="lato-bold">Acerca de mí</p>
-			<p class="lato-bold">Formación</p>
-			<p class="lato-bold">Experiencia</p>
-			<p class="lato-bold">Portafolio</p>
-		</header>
+			<div class="elemento-navbar">
+				<a href="/"><p class="lato-bold">Inicio</p></a>
+			</div>
+			<div class="elemento-navbar">
+				<a href="#about"><p class="lato-bold">Acerca de mí</p></a>
+			</div>
+			<div class="elemento-navbar">
+				<a href="/traininig"><p class="lato-bold">Formación</p></a>
+			</div>
+			<div class="elemento-navbar">
+				<a href="/experience"><p class="lato-bold">Experiencia</p></a>
+			</div>
+			<div class="elemento-navbar">
+				<a href="/portfolio"><p class="lato-bold">Portafolio</p></a>
 
+			</div>
+		</header>
 		<main class="flex-1">
 			<slot />
 		</main>
-
 	</body>
 </html>
 
 <style>
-	html,
-	body {
+	header{
+		width: fit-content;
+		display: flex;
+		flex-direction: row;
+		justify-content: end;
+		gap: 1rem;
+		background-color: #232929;
+		border-radius: 1rem;
+		padding: 1rem;
+		align-content: end;
+		margin: 2rem 2rem 0 auto;
+	}
+	.elemento-navbar{
+		width: fit-content;
+		height: fit-content;
+		display: inline-block;
+		max-height: 100%;
+		background-color: #105875;
+		border-radius: 0.5rem;
+	}
+	.elemento-navbar p{
 		margin: 0;
-		width: 100%;
-		height: 100%;
+		padding: 0.5rem 1rem  0.5rem 1rem;
+		color: white;
+	}
+	.elemento-navbar a{
+		text-decoration: none;
 	}
 </style>
