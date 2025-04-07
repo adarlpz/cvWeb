@@ -1,8 +1,36 @@
 ---
+import "../styles/global.css"
 ---
-<section>
-    <div>
-        <h2>Bienvenido a la página de inicio</h2>
-        <p>Este es el contenido de Home.</p>
+<section id="home">
+    <div class="col-2">
+        <div class="profile-container">
+            <img src="/dist/img/windows.png" alt="a">
+        </div>
+        <div class="profile-container">
+            <p class="lato-bold lato-big lato-white">BRANDON ADAIR LOPEZ LOPEZ</p>
+            <p class="lato-small lato-white">18 Años</p>
+            <p class="lato-small lato-white">adarlpz.dev@gmail.com</p>
+            <p class="lato-small lato-white">33 3036 2181</p>
+        </div>
     </div>
 </section>
+
+<style>
+.col-2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 0 5rem 0 5rem;
+    width: auto;
+    flex-grow: 1;
+}
+
+</style>

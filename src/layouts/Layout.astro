@@ -15,22 +15,21 @@ import "../styles/global.css"
 		<ClientRouter/>
 	</head>
 	<body>
-		<header class="">
+		<header>
 			<div class="elemento-navbar">
-				<a href="/"><p class="lato-bold">Inicio</p></a>
+				<a href="#home"><p class="lato-bold">Inicio</p></a>
 			</div>
 			<div class="elemento-navbar">
 				<a href="#about"><p class="lato-bold">Acerca de mí</p></a>
 			</div>
 			<div class="elemento-navbar">
-				<a href="/traininig"><p class="lato-bold">Formación</p></a>
+				<a href="#train"><p class="lato-bold">Formación</p></a>
 			</div>
 			<div class="elemento-navbar">
-				<a href="/experience"><p class="lato-bold">Experiencia</p></a>
+				<a href="#train"><p class="lato-bold">Experiencia</p></a>
 			</div>
 			<div class="elemento-navbar">
-				<a href="/portfolio"><p class="lato-bold">Portafolio</p></a>
-
+				<a href="#portfolio"><p class="lato-bold">Portafolio</p></a>
 			</div>
 		</header>
 		<main class="flex-1">
@@ -50,14 +49,18 @@ import "../styles/global.css"
 		border-radius: 1rem;
 		padding: 1rem;
 		align-content: end;
-		margin: 2rem 2rem 0 auto;
+		margin: 2rem 4.5rem 0 auto;
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 1000;
 	}
 	.elemento-navbar{
 		width: fit-content;
 		height: fit-content;
 		display: inline-block;
 		max-height: 100%;
-		background-color: #105875;
+		background-color: #0c3d51;
 		border-radius: 0.5rem;
 	}
 	.elemento-navbar p{
