@@ -82,12 +82,11 @@ section {
     background-color: #232929;
     margin: 0 2rem 2rem 2rem;
     border-radius: 1rem;
-    padding: 1.5rem;
     background-color: rgba(35, 41, 41, 0.8); /* último valor es opacidad (0 a 1) */
     backdrop-filter: blur(10px);
 }
 p {
-    margin: 10px;
+    margin: 5px;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;

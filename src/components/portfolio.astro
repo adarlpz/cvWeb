@@ -1,135 +1,149 @@
----
-// Este es un componente Astro funcional con carrusel
----
-
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <title>Mi Carrusel</title>
-    <style>
-        .portafolio {
-            padding: 2rem;
-            background-color: #071d2b;
-        }
-
-        .col-2 {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 200%;
-        }
-
-        .slide {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
-            flex-shrink: 0;
-        }
-
-        .profile-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 0 5rem 0 5rem;
-            flex-grow: 1;
-        }
-
-        .job-container, .school-container {
-            padding: 2rem;
-            background: #0c3d51;
-            border-radius: 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 0 5rem 5rem 5rem;
-            width: 250px;
-            flex-grow: 1;
-        }
-
-        .lato-small {
-            font-family: sans-serif;
-            font-size: 14px;
-        }
-
-        .lato-white {
-            color: white;
-        }
-
-        .lato-bold {
-            font-weight: bold;
-        }
-
-        .controls {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .controls button {
-            background-color: #0c3d51;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-
-<body>
-
 <section id="portafolio">
-    <div class="col-2">
-    <div class="carousel">
-        <div class="carousel-items">
-            <div class="carousel-item active">
-                <div class="school-container">
-                    <p class="lato-small lato-white lato-bold">TEKKURE</p>
-                    <p class="lato-small lato-white">Es una web para promocionar yo y mi equipo nuestros servicios de desarrollo de software y empezar a tener más experiencia y dinero jeje, el proyecto está en desarrollo actualmente pero ahí va</p>
-                    <p class="lato-small lato-white">2022 - 2025</p>
-                </div>
+    <div class="carousel-items">
+        <div class="carousel-item active">
+            <div class="school-container">
+                <p class="lato-small lato-white lato-bold">TEKKURE</p>
+                <p class="lato-small lato-white">Es una web para promocionar yo y mi equipo nuestros servicios de desarrollo de software y empezar a tener más experiencia y dinero jeje, el proyecto está en desarrollo actualmente pero ahí va</p>
+                <p class="lato-small lato-white">2022 - 2025</p>
             </div>
-            <div class="carousel-item">
-                <div class="school-container">
-                    <p class="lato-small lato-white lato-bold">Densora</p>
-                    <p class="lato-small lato-white">Un sistema web/móvil para la gestión de citas para dentistas, incluyendo algunas implementaciones extras como un bot de WhatsApp, procesamiento de imágenes y verificación de cédulas profesionales, proyecto en desarrollo :)</p>
-                    <p class="lato-small lato-white">2021 - 2025</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="job-container">
-                    <p class="lato-small lato-white lato-bold">Albums</p>
-                    <p class="lato-small lato-white">Es un sistema web para almacenar metadatos de álbumes musicales y administrar tus pistas y artistas favoritos. Fue mi proyecto de base de datos :)</p>
-                    <p class="lato-small lato-white">2024</p>
-                </div>
-            </div>
-
         </div>
-        <button id="prev">← Anterior</button>
-        <button id="next">Siguiente →</button>
+        <div class="carousel-item">
+            <div class="school-container">
+                <p class="lato-small lato-white lato-bold">Densora</p>
+                <p class="lato-small lato-white">Un sistema web/móvil para la gestión de citas para dentistas, incluyendo algunas implementaciones extras como un bot de WhatsApp, procesamiento de imágenes y verificación de cédulas profesionales, proyecto en desarrollo :)</p>
+                <p class="lato-small lato-white">2021 - 2025</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="job-container">
+                <p class="lato-small lato-white lato-bold">Albums</p>
+                <p class="lato-small lato-white">Es un sistema web para almacenar metadatos de álbumes musicales y administrar tus pistas y artistas favoritos. Fue mi proyecto de base de datos :)</p>
+                <p class="lato-small lato-white">2024</p>
+            </div>
+        </div>
     </div>
+    <div class="botones">
+        <button class="button" id="prev"> <p class="lato-small lato-white">Anterior</p></button>
+        <button class="button" id="next"> <p class="lato-small lato-white">Siguiente</p></button>
     </div>
 </section>
 
-    <div class="controls">
-        <button onclick="window.moveSlide(-1)">‹</button>
-        <button onclick="window.moveSlide(1)">›</button>
-    </div>
+<style>
+    .portafolio {
+        padding: 2rem;
+        background-color: #071d2b;
+    }
 
-<!-- JavaScript que se ejecuta en el cliente -->
-<script src="/src/scipts/global.js"></script>
-</body>
-</html>
+    .col-2 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 200%;
+    }
+
+    .slide {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5rem 0 5rem;
+        flex-grow: 1;
+    }
+
+    .job-container, .school-container {
+        padding: 2rem;
+        background: #0c3d51;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5rem 5rem 5rem;
+        width: 250px;
+        flex-grow: 1;
+    }
+
+    .lato-small {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    .lato-white {
+        color: white;
+    }
+
+    .lato-bold {
+        font-weight: bold;
+    }
+
+    .controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .controls button {
+        background-color: #0c3d51;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .carousel-items {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    .carousel-item {
+        display: flex;
+        flex: 0 0 100%;
+        flex-direction: column;
+        opacity: 0;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-item.active {
+        opacity: 1;
+        position: relative;
+    }
+    #portafolio{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .botones{
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+    }
+    button{
+        all: unset;
+        cursor: pointer;
+    }
+</style>
+
+<script src="/src/scipts/carousel.js"></script>
